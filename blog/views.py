@@ -2,4 +2,4 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 def index(request):
-    return HttpResponse('This is Blog Home Page of Shop')
+    return HttpResponse('This is Blog Home Page of Blog')
