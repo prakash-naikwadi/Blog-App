@@ -4,4 +4,5 @@ from django.http import HttpResponse
 def home(request):
     return HttpResponse('Have to write cbv instead of fbv')
 def contact(request):
-    return HttpResponse('This is Contact Page')
+
+    return HttpResponse('This is Http Respose(Manisha) Contact Page')
