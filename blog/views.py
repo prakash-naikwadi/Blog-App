@@ -6,5 +6,5 @@ def home(request):
 def contact(request):
     return HttpResponse('This is Http Respose(Manisha) Contact Page')
 def about(request):
-    return HttpResponse('<h1>This is About h Page of Blog</h1>')
+    return HttpResponse('<h1>This is About Page of Blog</h1>')
 
