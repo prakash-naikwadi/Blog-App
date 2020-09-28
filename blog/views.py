@@ -8,3 +8,5 @@ def contact(request):
 def about(request):
     return HttpResponse('<h1>This is About Page of Blog</h1>')
 
+def login_signup(request):
+    return HttpResponse('<h1>This is login and signup page</h1>')
