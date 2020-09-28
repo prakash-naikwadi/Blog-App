@@ -1,4 +1,4 @@
-
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,31 +8,20 @@
 
     <!-- Bootstrap CSS -->
     {% include 'base/css.html' %}
-    
-
-    <!-- navebar block -->
-
-    {% include 'base/navebar.html' %}
-   
+ 
     <title>Django Blog</title>
+    {% block custom_css %} {% endblock custom_css %}
   </head>
   <body>
-
-    
+      <!-- navebar block -->
+    {% include 'base/navebar.html' %}
     <!-- blog_home.html block -->
-
     {% block blog_home_block %}
                             
     {% endblock blog_home_block %}
-    
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
     {% include 'base/js.html' %}
 
   </body>
-
-  
 
 </html>

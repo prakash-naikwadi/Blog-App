@@ -4,9 +4,11 @@ from django.http import HttpResponse
 def home(request):
     return render(request, 'blog/blog_home.html', {})
 def contact(request):
-    return HttpResponse('This is Http Respose(Manisha) Contact Page')
+    return render(request, 'contact/contact.html', {})
 def about(request):
-    return HttpResponse('<h1>This is About Page of Blog</h1>')
+    return render(request, 'about.html', {})
+def login(request):
+    return render(request, 'auth/login.html', {})
 
-def login_signup(request):
-    return HttpResponse('<h1>This is login and signup page</h1>')
+def register(request):
+    return render(request, 'auth/register.html', {})

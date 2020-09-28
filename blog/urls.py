@@ -7,6 +7,7 @@ urlpatterns = [
     
     path('',views.home, name = 'BlogHome'),
     path('contact/',views.contact, name = 'BlogContact'),
-    path('about/',views.contact, name = 'about'),
-    path('login/', views.login_signup, name='login'),
+    path('about/',views.about, name = 'about'),
+    path('login/', views.login, name='login'),
+    path('register/', views.register, name='register'),
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

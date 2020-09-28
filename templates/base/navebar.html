@@ -1,13 +1,46 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{%url 'BlogHome'%}">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="{%url 'BlogContact'%}">Login <span class="sr-only">(current)</span></a>
-        <a class="nav-link" href="{%url 'about'%}">About Us</a>
-        <a class="nav-link" href="{%url 'login'%}">Contact Us</a>
-      </div>
-    </div>
-  </nav>
+{% url 'BlogHome' as home_url %}
+{% url 'BlogContact' as contact_url %}
+{% url 'login' as login_url %}
+{% url 'register' as register_url %}
+{% url 'about' as about_url %}
+
+
+{% load static %}
+<nav class="navbar mb-2 navbar-expand-lg navbar-dark bg-dark">
+<div class="container">
+  <a class="navbar-brand" href="{{home_url}}">
+    <img class='rounded-circle' src="{%static 'common/logo2.png'%}" width="50" height="50" alt="LOGO">
+    {% if brand_name %}{{brand_name}} {% else %} wedevelopers {% endif %}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item  {% if request.path == home_url %} active{% endif %}">
+        <a class="nav-link" href="{{home_url}}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item  {% if request.path == contact_url %} active{% endif %}">
+        <a class="nav-link" href="{{contact_url}}">Contact</a>
+      </li>
+      
+      <li class="nav-item  {% if request.path == about_url %} active{% endif %}">
+        <a class="nav-link" href="{{about_url}}">About</a>
+      </li>
+      
+      <li class="nav-item {% if request.path == login_url %} active -*{% endif %}">
+        <a class="nav-link" href="{{login_url}}">Login</a>
+      </li>
+      
+      <li class="nav-item  {% if request.path == login_url %} active{% endif %}">
+        <a class="nav-link" href="{{register_url}}">Register</a>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="border-radius: 25px;">
+      <button class="btn btn-danger my-2 my-sm-0" type="submit" style="border-radius: 25px;">Search</button>
+    </form>
+  </div>
+</div>
+</nav>
